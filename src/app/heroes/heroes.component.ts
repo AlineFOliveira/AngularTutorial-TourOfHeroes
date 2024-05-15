@@ -6,6 +6,7 @@ import { HeroService } from '../hero.service';
 import { HeroDetailComponent } from '../hero-detail/hero-detail.component';
 import { MessageService } from '../message.service';
 import {RouterLink, RouterOutlet} from '@angular/router';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   standalone: true,
@@ -25,7 +26,7 @@ export class HeroesComponent implements OnInit {
 
   getHeroes(): void {
     this.heroService.getHeroes()
-    .subscribe(heroes => this.heroes = heroes);
+        .subscribe(heroes => this.heroes = heroes);
   }
 
   add(name: string): void {
@@ -35,13 +36,12 @@ export class HeroesComponent implements OnInit {
       .subscribe(hero => {
         this.heroes.push(hero);
       });
- 
-    }
+  }
 
-    delete(hero: Hero): void {
-      this.heroes = this.heroes.filter(h => h !== hero);
-      this.heroService.deleteHero(hero.id).subscribe();
-    }
+  delete(hero: Hero): void {
+    this.heroes = this.heroes.filter(h => h !== hero);
+    this.heroService.deleteHero(hero.id).subscribe();
+  }
 
     
 }

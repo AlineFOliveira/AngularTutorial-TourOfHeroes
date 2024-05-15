@@ -4,7 +4,7 @@ import {FormsModule} from '@angular/forms';
 import {Hero} from '../hero';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
-
+import { HttpClientModule } from '@angular/common/http';
 import { HeroService } from '../hero.service';
 
 @Component({
