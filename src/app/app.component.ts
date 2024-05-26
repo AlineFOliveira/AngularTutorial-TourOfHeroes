@@ -17,7 +17,7 @@ import { HttpClientModule } from '@angular/common/http';
     HeroDetailComponent,
     MessagesComponent,
     RouterLink,
-    HttpClientModule 
+    HttpClientModule
   ],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
